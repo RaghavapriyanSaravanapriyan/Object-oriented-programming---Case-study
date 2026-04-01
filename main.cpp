@@ -80,7 +80,7 @@ public:
 // ==========================================
 class SeniorEngineer : public SalariedEmployee {
 public:
-    SeniorEngineer(string n, int i) : SalariedEmployee(n, i, 120000.0) {}
+    SeniorEngineer(string n, int i) : SalariedEmployee(n, i, 250000.0) {}
 
     double simulateMonth() override {
         cout << "[WORK] Senior Engineer " << name << " designed system architectures this month.\n";
@@ -88,7 +88,7 @@ public:
     }
 
     void displayDetails() override {
-        cout << "ID: " << id << " | Name: " << name << " | Role: Senior Engineer | Base: $120k/yr\n";
+        cout << "ID: " << id << " | Name: " << name << " | Role: Senior Engineer | Base: $250k/yr\n";
     }
 };
 
@@ -170,7 +170,7 @@ int main() {
             }
             
             cout << "\n--- Open Positions ---\n";
-            cout << "1. Senior Engineer ($120k/yr)\n";
+            cout << "1. Senior Engineer ($250k/yr)\n";
             cout << "2. Junior Engineer ($75k/yr)\n";
             cout << "3. Department Manager ($95k/yr)\n";
             cout << "4. Floor Technician ($30/hr)\n";
