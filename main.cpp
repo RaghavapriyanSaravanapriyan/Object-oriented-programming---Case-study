@@ -3,9 +3,20 @@
 
 using namespace std;
 
-// ==========================================
-// LEVEL 0: ABSTRACT BASE CLASS
-// ==========================================
+/* 
+THE BASE CLASS - THE EMPLOYEE.
+
+attributes are name, id
+static members : totalactiveemployees and company budget
+
+a constructor to initialise the name and id and also increment the total 
+employees
+
+a destructor to reclaim memory
+
+
+
+*/
 class Employee {
 protected:
     string name;
@@ -42,9 +53,9 @@ public:
 int Employee::totalActiveEmployees = 0;
 double Employee::companyBudget = 1000000.00; // $1 Million starting budget
 
-// ==========================================
+// ============
 // LEVEL 1: INTERMEDIATE CATEGORIES
-// ==========================================
+
 class SalariedEmployee : public Employee {
 protected:
     double annualSalary;
