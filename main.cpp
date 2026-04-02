@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -50,7 +51,7 @@ public:
 
 // Initialize static members
 int Employee::totalActiveEmployees = 0;
-double Employee::companyBudget = 1000000.00; // $1 Million starting budget
+double Employee::companyBudget = 1000000.00; // ₹1 Million starting budget
 
 // LEVEL 1: INTERMEDIATE CATEGORIES
 
@@ -97,7 +98,7 @@ public:
     }
 
     void displayDetails() override {
-        cout << "ID: " << id << " | Name: " << name << " | Role: Senior Engineer | Base: $250k/yr\n";
+        cout << "ID: " << id << " | Name: " << name << " | Role: Senior Engineer | Base: ₹250k/yr\n";
     }
 };
 
@@ -111,7 +112,7 @@ public:
     }
 
     void displayDetails() override {
-        cout << "ID: " << id << " | Name: " << name << " | Role: Junior Engineer | Base: $75k/yr\n";
+        cout << "ID: " << id << " | Name: " << name << " | Role: Junior Engineer | Base: ₹75k/yr\n";
     }
 };
 
@@ -125,13 +126,13 @@ public:
     }
 
     void displayDetails() override {
-        cout << "ID: " << id << " | Name: " << name << " | Role: Department Manager | Base: $95k/yr\n";
+        cout << "ID: " << id << " | Name: " << name << " | Role: Department Manager | Base: ₹95k/yr\n";
     }
 };
 
 class FloorTechnician : public HourlyEmployee {
 public:
-    FloorTechnician(string n, int i) : HourlyEmployee(n, i, 30.0) {} // $30/hr
+    FloorTechnician(string n, int i) : HourlyEmployee(n, i, 30.0) {} // ₹30/hr
 
     double simulateMonth() override {
         cout << "[WORK] Floor Tech " << name << " logged 160 hours on the assembly floor this month.\n";
@@ -139,7 +140,7 @@ public:
     }
 
     void displayDetails() override {
-        cout << "ID: " << id << " | Name: " << name << " | Role: Floor Tech | Rate: $" << hourlyRate << "/hr\n";
+        cout << "ID: " << id << " | Name: " << name << " | Role: Floor Tech | Rate: ₹" << hourlyRate << "/hr\n";
     }
 };
 
@@ -159,7 +160,7 @@ int main() {
     while (running) {
         cout << "\n==========================================\n";
         cout << "ACTIVE EMPLOYEES: " << Employee::getTotalActive() << " / " << maxCapacity << "\n";
-        cout << "COMPANY BUDGET: $" << Employee::getBudget() << "\n";
+        cout << "COMPANY BUDGET: ₹" << fixed << setprecision(2) << Employee::getBudget() << "\n";
         cout << "==========================================\n";
         cout << "1. Hire New Employee\n";
         cout << "2. Simulate 1 Month & Process Auto-Payroll\n";
@@ -177,10 +178,10 @@ int main() {
             }
             
             cout << "\n--- Open Positions ---\n";
-            cout << "1. Senior Engineer ($250k/yr)\n";
-            cout << "2. Junior Engineer ($75k/yr)\n";
-            cout << "3. Department Manager ($95k/yr)\n";
-            cout << "4. Floor Technician ($30/hr)\n";
+            cout << "1. Senior Engineer (₹250k/yr)\n";
+            cout << "2. Junior Engineer (₹75k/yr)\n";
+            cout << "3. Department Manager (₹95k/yr)\n";
+            cout << "4. Floor Technician (₹30/hr)\n";
             cout << "Select role to hire: ";
             int roleChoice;
             cin >> roleChoice;
@@ -211,7 +212,7 @@ int main() {
                     // polymorphism : This one call prints the specific work done AND calculates the correct pay
                     double pay = roster[i]->simulateMonth(); 
                     
-                    cout << "   -> Monthly Salary Credited: $" << pay << "\n\n";
+                    cout << "   -> Monthly Salary Credited: ₹" << fixed << setprecision(2) << pay << "\n\n";
                     totalPayout += pay;
                 }
             }
@@ -219,7 +220,7 @@ int main() {
             // Deduct the total payroll from the shared static budget
             Employee::deductFromBudget(totalPayout);
             
-            cout << ">> TOTAL MONTHLY PAYROLL DEDUCTED: $" << totalPayout << "\n";
+            cout << ">> TOTAL MONTHLY PAYROLL DEDUCTED: ₹" << fixed << setprecision(2) << totalPayout << "\n";
             if (Employee::getBudget() < 0) {
                 cout << ">> CRITICAL WARNING: COMPANY BUDGET IS NEGATIVE.\n";
             }
