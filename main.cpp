@@ -14,9 +14,8 @@ employees
 
 a destructor to reclaim memory
 
-
-
 */
+
 class Employee {
 protected:
     string name;
@@ -53,7 +52,6 @@ public:
 int Employee::totalActiveEmployees = 0;
 double Employee::companyBudget = 1000000.00; // $1 Million starting budget
 
-// ============
 // LEVEL 1: INTERMEDIATE CATEGORIES
 
 class SalariedEmployee : public Employee {
@@ -86,9 +84,9 @@ public:
     }
 };
 
-// ==========================================
+
 // LEVEL 2: PREDEFINED SPECIALIZED ROLES
-// ==========================================
+
 class SeniorEngineer : public SalariedEmployee {
 public:
     SeniorEngineer(string n, int i) : SalariedEmployee(n, i, 250000.0) {}
@@ -145,9 +143,7 @@ public:
     }
 };
 
-// ==========================================
 // MAIN FUNCTION - Interactive Dashboard
-// ==========================================
 int main() {
     int maxCapacity = 50;
     
@@ -212,8 +208,7 @@ int main() {
                 if (roster[i] != nullptr) {
                     roster[i]->displayDetails();
                     
-                    // POLYMORPHISM IN ACTION: 
-                    // This one call prints the specific work done AND calculates the correct pay
+                    // polymorphism : This one call prints the specific work done AND calculates the correct pay
                     double pay = roster[i]->simulateMonth(); 
                     
                     cout << "   -> Monthly Salary Credited: $" << pay << "\n\n";
