@@ -55,10 +55,10 @@ These classes implement the specific `simulateMonth()` and `displayDetails()` lo
 
 | Class | Role | Pay Model | Base Rate/Salary |
 | :--- | :--- | :--- | :--- |
-| `SeniorEngineer` | Architecture & Design | Salaried | ₹120,000/yr |
-| `JuniorEngineer` | Coding & Training | Salaried | ₹75,000/yr |
-| `Manager` | Operations & Planning | Salaried | ₹95,000/yr |
-| `FloorTechnician` | Assembly & Maintenance | Hourly | ₹30/hr |
+| `SeniorEngineer` | Architecture & Design | Salaried | ₹50 LPA |
+| `JuniorEngineer` | Coding & Training | Salaried | ₹20 LPA |
+| `Manager` | Operations & Planning | Salaried | ₹30 LPA |
+| `FloorTechnician` | Assembly & Maintenance | Hourly | ₹1,000/hr |
 
 ---
 

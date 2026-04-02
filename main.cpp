@@ -90,7 +90,7 @@ public:
 
 class SeniorEngineer : public SalariedEmployee {
 public:
-    SeniorEngineer(string n, int i) : SalariedEmployee(n, i, 250000.0) {}
+    SeniorEngineer(string n, int i) : SalariedEmployee(n, i, 5000000.0) {}
 
     double simulateMonth() override {
         cout << "[WORK] Senior Engineer " << name << " designed system architectures this month.\n";
@@ -98,13 +98,13 @@ public:
     }
 
     void displayDetails() override {
-        cout << "ID: " << id << " | Name: " << name << " | Role: Senior Engineer | Base: ₹250k/yr\n";
+        cout << "ID: " << id << " | Name: " << name << " | Role: Senior Engineer | Base: ₹50 LPA\n";
     }
 };
 
 class JuniorEngineer : public SalariedEmployee {
 public:
-    JuniorEngineer(string n, int i) : SalariedEmployee(n, i, 75000.0) {}
+    JuniorEngineer(string n, int i) : SalariedEmployee(n, i, 2000000.0) {}
 
     double simulateMonth() override {
         cout << "[WORK] Junior Engineer " << name << " completed code sprints and training this month.\n";
@@ -112,13 +112,13 @@ public:
     }
 
     void displayDetails() override {
-        cout << "ID: " << id << " | Name: " << name << " | Role: Junior Engineer | Base: ₹75k/yr\n";
+        cout << "ID: " << id << " | Name: " << name << " | Role: Junior Engineer | Base: ₹20 LPA\n";
     }
 };
 
 class Manager : public SalariedEmployee {
 public:
-    Manager(string n, int i) : SalariedEmployee(n, i, 95000.0) {}
+    Manager(string n, int i) : SalariedEmployee(n, i, 3000000.0) {}
 
     double simulateMonth() override {
         cout << "[WORK] Manager " << name << " handled department operations and planning this month.\n";
@@ -126,13 +126,13 @@ public:
     }
 
     void displayDetails() override {
-        cout << "ID: " << id << " | Name: " << name << " | Role: Department Manager | Base: ₹95k/yr\n";
+        cout << "ID: " << id << " | Name: " << name << " | Role: Department Manager | Base: ₹30 LPA\n";
     }
 };
 
 class FloorTechnician : public HourlyEmployee {
 public:
-    FloorTechnician(string n, int i) : HourlyEmployee(n, i, 30.0) {} // ₹30/hr
+    FloorTechnician(string n, int i) : HourlyEmployee(n, i, 1000.0) {} // ₹1000/hr
 
     double simulateMonth() override {
         cout << "[WORK] Floor Tech " << name << " logged 160 hours on the assembly floor this month.\n";
@@ -178,10 +178,10 @@ int main() {
             }
             
             cout << "\n--- Open Positions ---\n";
-            cout << "1. Senior Engineer (₹250k/yr)\n";
-            cout << "2. Junior Engineer (₹75k/yr)\n";
-            cout << "3. Department Manager (₹95k/yr)\n";
-            cout << "4. Floor Technician (₹30/hr)\n";
+            cout << "1. Senior Engineer (₹50 LPA)\n";
+            cout << "2. Junior Engineer (₹20 LPA)\n";
+            cout << "3. Department Manager (₹30 LPA)\n";
+            cout << "4. Floor Technician (₹1000/hr)\n";
             cout << "Select role to hire: ";
             int roleChoice;
             cin >> roleChoice;
