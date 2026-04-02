@@ -51,7 +51,7 @@ public:
 
 // Initialize static members
 int Employee::totalActiveEmployees = 0;
-double Employee::companyBudget = 1000000.00; // ₹1 Million starting budget
+double Employee::companyBudget = 1000000.00; // ₹dynamic starting budget
 
 // LEVEL 1: INTERMEDIATE CATEGORIES
 
@@ -153,9 +153,12 @@ int main() {
     int currentHeadcount = 0;
     int nextId = 1001;
     bool running = true;
-
+    double startingbudget=0.00;
     cout << "--- Enterprise Employee & Budget System ---\n";
-    cout << "Welcome, HR Administrator.\n";
+    cout << "Welcome, Admin.\n";
+    cout<<"ENTER COMPANY BUDGET - ";
+    cin>>startingbudget;
+    cout<<endl;
 
     while (running) {
         cout << "\n==========================================\n";
