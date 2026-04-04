@@ -46,13 +46,11 @@ public:
     // Static methods
     static int getTotalActive() { return totalActiveEmployees; }
     static double getBudget() { return companyBudget; }
-    static void setBudget(double amount) { companyBudget = amount; }
     static void deductFromBudget(double amount) { companyBudget -= amount; }
 };
 
 // Initialize static members
 int Employee::totalActiveEmployees = 0;
-double Employee::companyBudget = 0.00; // Initialized to zero, set by user input
 
 // LEVEL 1: INTERMEDIATE CATEGORIES
 
@@ -159,7 +157,7 @@ int main() {
     cout << "Welcome, Admin.\n";
     cout<<"ENTER COMPANY BUDGET - ";
     cin>>startingbudget;
-    Employee::setBudget(startingbudget);
+
     cout<<endl;
 
     while (running) {
